@@ -1,14 +1,13 @@
 const dns = require('dns');
 dns.setDefaultResultOrder('ipv4first');
 
-
 require('dotenv').config();
 const express   = require('express');
 const cors      = require('cors');
 const path      = require('path');
 const connectDB = require('./config/db');
 
-/* ✅ ADD THIS (debug only, baad me hata sakte ho) */
+/* ✅ DEBUG (already correct) */
 console.log("PLACE_ID:", process.env.GOOGLE_PLACE_ID);
 console.log("API_KEY:", process.env.GOOGLE_PLACES_API_KEY ? "Loaded" : "Missing");
 
@@ -20,11 +19,22 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+/* ✅ EXISTING ROUTES */
 app.use('/api/products', require('./routes/productRoutes'));
 app.use('/api/contact',  require('./routes/contactRoutes'));
 app.use('/api/gallery',  require('./routes/galleryRoutes'));
 app.use('/api/orders',   require('./routes/orderRoutes'));
-app.use('/api/reviews',  require('./routes/reviewRoutes'));  // ✅ already correct
+
+/* ✅ GOOGLE REVIEWS ROUTE (ALREADY PRESENT - KEEP SAME) */
+app.use('/api/reviews',  require('./routes/reviewRoutes'));
+
+/* ✅ ADD THIS (optional but useful debug route) */
+app.get('/api/google-check', (req, res) => {
+  res.json({
+    placeId: process.env.GOOGLE_PLACE_ID,
+    apiKeyLoaded: !!process.env.GOOGLE_PLACES_API_KEY
+  });
+});
 
 app.get('/api/health', (req, res) => res.json({ status: 'OK', env: process.env.NODE_ENV }));
 app.get('/api/config',  (req, res) => res.json({
