@@ -1,0 +1,147 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, .06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 68px;
+  transition: box-shadow .3s;
+}
+.navbar.scrolled { box-shadow: 0 4px 24px rgba(0, 0, 0, .12); }
+
+/* ===== LOGO FINAL FIX ===== */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+
+.nav-logo img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* REMOVE OLD ICON */
+.nav-logo-icon {
+  display: none !important;
+}
+
+.nav-logo span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.nav-logo em {
+  color: var(--teal);
+  font-style: normal;
+}
+
+/* ===== NAV LINKS ===== */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: .87rem;
+  font-weight: 700;
+  color: var(--text);
+  padding: 7px 13px;
+  border-radius: 7px;
+  transition: color .2s, background .2s;
+  letter-spacing: .03em;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-links a:hover {
+  color: var(--teal);
+  background: var(--teal-light);
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, #00b4b4, #17a369);
+  color: #fff !important;
+  border-radius: 24px;
+  padding: 8px 20px;
+}
+
+/* ===== RIGHT SIDE ===== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* SEARCH */
+.nav-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--offwhite);
+  border-radius: 24px;
+  padding: 7px 14px;
+}
+
+.nav-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/* CART */
+.cart-btn {
+  background: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: var(--teal);
+  color: #fff;
+  border-radius: 50%;
+  font-size: .65rem;
+  padding: 3px 6px;
+}
+
+/* MOBILE */
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #fff;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

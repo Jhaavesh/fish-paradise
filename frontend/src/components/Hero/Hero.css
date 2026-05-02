@@ -1,0 +1,164 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(105deg, rgba(8,22,42,0.85) 40%, rgba(8,22,42,0.35) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 8%;
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  color: var(--teal);
+  font-size: .78rem;
+  letter-spacing: .2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+  color: #fff;
+  line-height: 1.02;
+  margin-bottom: 20px;
+}
+
+.hero-title span {
+  color: var(--teal);
+}
+
+.hero-desc {
+  color: rgba(255,255,255,0.82);
+  font-size: 1.06rem;
+  line-height: 1.75;
+  margin-bottom: 38px;
+  max-width: 520px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* ✅ BUTTON FIX */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== TRUST BADGE (FINAL FIX) ===== */
+
+.trust-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px 10px 10px;
+  border-radius: 50px;
+
+  background: rgba(15, 25, 45, 0.7);
+  backdrop-filter: blur(10px);
+
+  border: 1.5px solid rgba(255, 200, 80, 0.6);
+
+  box-shadow: 0 0 20px rgba(255, 200, 80, 0.25);
+}
+
+.trust-pill-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #d4a017, #f5c842);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  font-size: 1rem;
+
+  box-shadow: 0 4px 12px rgba(255, 200, 80, 0.5);
+}
+
+.trust-pill-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.trust-pill-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.trust-pill-stars {
+  display: flex;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+.trust-pill-stars i {
+  color: #f5c842;
+  font-size: 0.7rem;
+}
+
+/* SCROLL BUTTON */
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.6rem;
+  }
+}
+.hero-logo {
+  margin-bottom: 15px;
+}
+
+.hero-logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}

@@ -1,0 +1,43 @@
+footer { background: var(--navy); }
+.footer-topbar { background: var(--navy-mid); padding: 24px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.ftb-brand { display: flex; align-items: center; gap: 12px; }
+.ftb-logo-wrap { width: 44px; height: 44px; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: transparent; }
+.ftb-logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
+.ftb-brand span { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.25rem; color: #fff; }
+.ftb-brand em { color: var(--teal); font-style: normal; }
+.ftb-contacts { display: flex; gap: 32px; flex-wrap: wrap; }
+.ftb-item { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.65); font-size: .83rem; text-decoration: none; transition: color .2s; }
+.ftb-item:hover { color: var(--teal); }
+.ftb-item i { color: var(--teal); font-size: 1.1rem; }
+.ftb-item small { display: block; font-size: .68rem; color: rgba(255,255,255,0.38); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 1px; }
+.footer-main { padding: 56px 5% 40px; display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.5fr; gap: 40px; max-width: 1400px; margin: auto; }
+.footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.footer-logo-img-wrap { width: 48px; height: 48px; border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.footer-logo-img-wrap--blue { background: transparent; }
+.footer-logo-img-wrap img { width: 100%; height: 100%; object-fit: contain; }
+.footer-logo span { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.25rem; color: #fff; }
+.footer-logo em { color: var(--teal); font-style: normal; }
+.footer-desc { color: rgba(255,255,255,0.5); font-size: .82rem; line-height: 1.7; margin-bottom: 18px; }
+.footer-soc { display: flex; gap: 10px; }
+.footer-soc a { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; font-size: .8rem; text-decoration: none; transition: background .2s, color .2s; }
+.footer-soc a:hover { background: var(--teal); color: #fff; }
+.footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .95rem; color: #fff; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--teal); display: inline-block; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-col ul li button { background: none; border: none; color: rgba(255,255,255,0.5); font-size: .82rem; cursor: pointer; display: flex; align-items: center; gap: 8px; padding: 0; transition: color .2s; font-family: 'Nunito Sans', sans-serif; }
+.footer-col ul li button:hover { color: var(--teal); }
+.footer-col ul li button i { font-size: .62rem; color: var(--teal); }
+.footer-nl p { color: rgba(255,255,255,0.5); font-size: .82rem; line-height: 1.6; margin-bottom: 14px; }
+.nl-form { display: flex; border-radius: 28px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15); }
+.nl-form input { flex: 1; background: rgba(255,255,255,0.07); border: none; color: #fff; padding: 11px 16px; font-size: .82rem; outline: none; font-family: 'Nunito Sans', sans-serif; }
+.nl-form input::placeholder { color: rgba(255,255,255,0.38); }
+.nl-form button { background: var(--teal-grad); border: none; color: #fff; padding: 0 18px; font-size: .85rem; cursor: pointer; }
+.nl-done { color: var(--teal); font-size: .8rem; margin-top: 8px; display: flex; align-items: center; gap: 6px; }
+.wa-join { display: flex; align-items: center; justify-content: center; gap: 9px; background: #25d366; color: #fff; border-radius: 26px; padding: 10px 18px; font-size: .83rem; font-weight: 700; margin-top: 16px; text-decoration: none; transition: background .2s; }
+.wa-join:hover { background: #1ebe5a; }
+.wa-join i { font-size: 1.1rem; }
+.footer-bottom { background: var(--navy-mid); border-top: 1px solid rgba(255,255,255,0.06); padding: 16px 5%; display: flex; justify-content: space-between; align-items: center; font-size: .76rem; color: rgba(255,255,255,0.35); }
+.footer-bottom-links { display: flex; gap: 18px; }
+.footer-bottom-links button { background: none; border: none; color: rgba(255,255,255,0.35); font-size: .76rem; cursor: pointer; transition: color .2s; font-family: 'Nunito Sans', sans-serif; }
+.footer-bottom-links button:hover { color: var(--teal); }
+@media (max-width: 900px) { .footer-main { grid-template-columns: 1fr 1fr; } .ftb-contacts { gap: 16px; } }
+@media (max-width: 600px) { .footer-main { grid-template-columns: 1fr; } .footer-topbar { flex-direction: column; align-items: flex-start; } .footer-bottom { flex-direction: column; gap: 10px; text-align: center; } }

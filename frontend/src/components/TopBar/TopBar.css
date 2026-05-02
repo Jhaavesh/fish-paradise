@@ -1,0 +1,6 @@
+.topbar{background:var(--navy);color:#afc8e0;font-size:.8rem;padding:7px 5%;display:flex;justify-content:space-between;align-items:center;letter-spacing:.03em}
+.topbar a{color:#afc8e0;transition:color .2s;display:inline-flex;align-items:center;gap:6px}
+.topbar a:hover{color:var(--teal)}.topbar-left{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.topbar-right{display:flex;gap:10px}.sep{opacity:.4}
+.soc-icon{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;font-size:.72rem;transition:background .2s,color .2s}
+.soc-icon:hover{background:var(--teal);color:#fff}
+@media(max-width:640px){.topbar-left a:last-of-type,.topbar-left .sep{display:none}}

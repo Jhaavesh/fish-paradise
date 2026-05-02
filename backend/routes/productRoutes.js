@@ -1,0 +1,12 @@
+const r = require('express').Router();
+const c = require('../controllers/productController');
+const upload = require('../middleware/upload');
+r.get('/categories', c.getCategories);
+r.post('/upload', upload.array('images', 10), c.uploadImage);
+r.delete('/upload/:filename', c.deleteImage);
+r.get('/', c.getProducts);
+r.get('/:id', c.getProduct);
+r.post('/', c.createProduct);
+r.put('/:id', c.updateProduct);
+r.delete('/:id', c.deleteProduct);
+module.exports = r;

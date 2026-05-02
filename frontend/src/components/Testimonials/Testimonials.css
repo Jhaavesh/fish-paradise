@@ -1,0 +1,114 @@
+.testi-section { background: #fff; }
+
+.testi-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+.testi-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* Google rating box */
+.google-rating-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 22px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.06);
+  min-width: 200px;
+}
+.grb-gname { font-size: .8rem; color: var(--muted); font-weight: 600; margin-bottom: 2px; }
+.grb-score { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 2.6rem; color: var(--navy); line-height: 1; }
+.grb-label { font-size: .72rem; color: var(--muted); font-weight: 600; margin-top: 3px; }
+
+/* Stars */
+.star-row { display: flex; gap: 3px; margin: 4px 0; }
+.star-row i { color: #f5c842; font-size: .82rem; }
+.star-row .star-empty { color: #ddd; }
+
+/* Write review btn */
+.write-review-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 2px solid #dadce0;
+  color: var(--text);
+  border-radius: 28px;
+  padding: 10px 22px;
+  font-size: .88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color .2s, box-shadow .2s;
+  white-space: nowrap;
+}
+.write-review-btn:hover { border-color: #4285F4; box-shadow: 0 4px 16px rgba(66,133,244,.15); }
+
+/* Loading skeletons */
+.testi-loading { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.testi-skeleton { height: 180px; border-radius: 18px; background: linear-gradient(90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* Error state */
+.testi-error { text-align: center; padding: 48px 20px; color: var(--muted); }
+.testi-error i { font-size: 2.5rem; color: var(--border); margin-bottom: 12px; display: block; }
+.testi-error p { font-size: .95rem; }
+
+/* Carousel */
+.testi-carousel-wrap { position: relative; }
+.testi-cards-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.testi-card {
+  background: var(--offwhite);
+  border-radius: 18px;
+  padding: 26px;
+  border: 1.5px solid var(--border);
+  transition: all .3s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.testi-card.active {
+  border-color: var(--teal);
+  box-shadow: 0 8px 32px rgba(0,180,180,.12);
+  background: #fff;
+  transform: translateY(-4px);
+}
+
+.tc-top { display: flex; align-items: center; gap: 12px; }
+.tc-photo { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.tc-avatar { width: 44px; height: 44px; border-radius: 50%; color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.tc-info { flex: 1; min-width: 0; }
+.tc-name { font-size: .9rem; font-weight: 700; color: var(--navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tc-time { font-size: .75rem; color: var(--muted); margin-top: 1px; }
+.tc-google-badge { opacity: .75; flex-shrink: 0; }
+.tc-text { font-size: .88rem; color: var(--text); line-height: 1.75; flex: 1; }
+
+/* Controls */
+.testi-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 28px; }
+.tc-btn { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--border); background: #fff; color: var(--navy); display: flex; align-items: center; justify-content: center; font-size: .85rem; cursor: pointer; transition: all .2s; }
+.tc-btn:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-light); }
+.tc-dots { display: flex; gap: 7px; }
+.tc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); border: none; cursor: pointer; transition: all .3s; }
+.tc-dot.active { background: var(--teal); width: 24px; border-radius: 4px; }
+
+@media (max-width: 768px) {
+  .testi-header { flex-direction: column; }
+  .testi-header-right { align-items: flex-start; }
+  .testi-loading { grid-template-columns: 1fr; }
+}
