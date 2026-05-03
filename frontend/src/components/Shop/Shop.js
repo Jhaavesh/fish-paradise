@@ -6,16 +6,6 @@ import { useNavigate } from 'react-router-dom'; // ✅ added
 
 const CATS = ['All', 'Fish Tanks', 'Live Fish', 'Filters', 'Lights', 'Plants', 'Fish Food', 'Decorations'];
 
-const CATEGORY_IMAGES = {
-  'Fish Tanks': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=70',
-  'Filters': 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&q=70',
-  'Lights': 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=400&q=70',
-  'Plants': 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=70',
-  'Fish Food': 'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=400&q=70',
-  'Decorations': 'https://images.unsplash.com/photo-1621181483028-5f8b4a3d58c8?w=400&q=70',
-  'Live Fish': 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=400&q=70'
-};
-
 export default function Shop() {
   const [products, setProducts] = useState([]);
   const [cat, setCat] = useState('All');
