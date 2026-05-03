@@ -5,9 +5,9 @@ import './Gallery.css';
 const DEMO = [
   { _id:'d1', mediaUrl:'https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=500&q=70', mediaType:'image' },
   { _id:'d2', mediaUrl:'https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=500&q=70',   mediaType:'image' },
-  { _id:'d3', mediaUrl:'https://images.unsplash.com/photo-1596550944968-6a2ad5a7b0f4?w=500&q=70', mediaType:'image' },
-  { _id:'d4', mediaUrl:'https://images.unsplash.com/photo-1601460085826-4c5a39a8c7d6?w=500&q=70', mediaType:'image' },
-  { _id:'d5', mediaUrl:'https://images.unsplash.com/photo-1621181483028-5f8b4a3d58c8?w=500&q=70', mediaType:'image' },
+  { _id:'d3', mediaUrl:'https://static.vecteezy.com/system/resources/thumbnails/075/316/097/small/three-orange-fish-in-a-tank-with-plants-photo.jpg', mediaType:'image' },
+  { _id:'d4', mediaUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPpDkQ8SDmOhzPDibXLkc8EEQyNWsK976tUw&s', mediaType:'image' },
+  { _id:'d5', mediaUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlymPqS7FCnygaIQQKSfodhqB1GlE-aohDwg&s', mediaType:'image' },
 ];
 export default function Gallery() {
   const [items, setItems] = useState(DEMO);
