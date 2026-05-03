@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../../assets/logo.png';
 import logo2 from '../../assets/logo2.png';
+import logo3 from '../../assets/logo3.png';
 import './Footer.css';
 
 const WA_GROUP = process.env.REACT_APP_WA_GROUP || 'https://chat.whatsapp.com/YOUR_GROUP_LINK';
@@ -36,7 +37,7 @@ export default function Footer() {
       <div className="footer-topbar">
         <div className="ftb-brand">
           <div className="ftb-logo-wrap">
-            <img src={logo2} alt="Fish Paradise" />
+            <img src={logo3} alt="Fish Paradise" />
           </div>
           <span>Fish <em>Paradise</em></span>
         </div>
@@ -61,7 +62,7 @@ export default function Footer() {
         <div className="footer-brand-col">
           <div className="footer-logo">
             <div className="footer-logo-img-wrap footer-logo-img-wrap--blue">
-              <img src={logo2} alt="Fish Paradise" />
+              <img src={logo3} alt="Fish Paradise" />
             </div>
             <span>Fish <em>Paradise</em></span>
           </div>
