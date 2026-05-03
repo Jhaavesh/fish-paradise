@@ -25,7 +25,7 @@ export default function Hero() {
 
       <div className="hero-content">
 
-        <span className="hero-eyebrow">Welcome to Fish Paradise</span>
+        <span className="hero-eyebrow wave-water">Welcome to Fish Paradise</span>
 
         <h1 className="hero-title">
           Bring Your Dream<br />
