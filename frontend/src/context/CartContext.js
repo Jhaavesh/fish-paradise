@@ -13,13 +13,11 @@ case 'ADD': {
       )
     : [...state.items, { ...action.payload, qty: 1 }];
 
-  toast.success(`${action.payload.name} added to cart`);
-
   return {
     ...state,
     items: updatedItems
   };
-}    case 'REMOVE': toast('Removed from cart', { icon: 'X' }); return { ...state, items: state.items.filter(i => i._id !== action.payload) };
+}    case 'REMOVE': return { ...state, items: state.items.filter(i => i._id !== action.payload) };
     case 'UPDATE_QTY': if (action.payload.qty < 1) return { ...state, items: state.items.filter(i => i._id !== action.payload.id) }; return { ...state, items: state.items.map(i => i._id === action.payload.id ? { ...i, qty: action.payload.qty } : i) };
     case 'CLEAR': return { ...state, items: [] };
     case 'TOGGLE_CART': return { ...state, isOpen: !state.isOpen };
@@ -30,15 +28,28 @@ case 'ADD': {
 }
 export function CartProvider({ children }) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
-  const addToCart = useCallback(p => dispatch({ type: 'ADD', payload: p }), []);
-  const removeFromCart = useCallback(id => dispatch({ type: 'REMOVE', payload: id }), []);
+
+  const addToCart = useCallback(p =>{ dispatch({ type: 'ADD', payload: p }); toast.success(`${p.name} added to cart`);}, []);
+
+  const removeFromCart = useCallback(id => {
+  dispatch({ type: 'REMOVE', payload: id });
+  toast('Removed from cart', { icon: 'X' });
+}, []);
+
   const updateQty = useCallback((id, qty) => dispatch({ type: 'UPDATE_QTY', payload: { id, qty } }), []);
+
   const clearCart = useCallback(() => dispatch({ type: 'CLEAR' }), []);
+
   const toggleCart = useCallback(() => dispatch({ type: 'TOGGLE_CART' }), []);
+
   const openCart = useCallback(() => dispatch({ type: 'OPEN_CART' }), []);
+
   const closeCart = useCallback(() => dispatch({ type: 'CLOSE_CART' }), []);
+
   const total = state.items.reduce((s, i) => s + i.price * i.qty, 0);
+
   const itemCount = state.items.reduce((s, i) => s + i.qty, 0);
+
   return <CartContext.Provider value={{ ...state, addToCart, removeFromCart, updateQty, clearCart, toggleCart, openCart, closeCart, total, itemCount }}>{children}</CartContext.Provider>;
 }
 export const useCart = () => useContext(CartContext);
