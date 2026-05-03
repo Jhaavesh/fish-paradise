@@ -162,3 +162,48 @@
   width: auto;
   object-fit: contain;
 }
+
+
+.wave-water {
+  position: relative;
+  display: inline-block;
+  color: #00e5ff;
+  font-weight: 600;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.wave-water::before,
+.wave-water::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='20' viewBox='0 0 200 20'%3E%3Cpath d='M0 10 Q25 0 50 10 T100 10 T150 10 T200 10 V20 H0 Z' fill='%2300e5ff33'/%3E%3C/svg%3E");
+  background-size: 80px 20px;
+  top: 0;
+  opacity: 2;
+  z-index: -1;
+}
+
+
+.wave-water::before {
+  animation: waveMove 4s linear infinite;
+}
+
+.wave-water::after {
+  animation: waveMove 6s linear infinite reverse;
+  opacity: 0.3;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
